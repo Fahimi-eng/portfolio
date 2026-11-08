@@ -30,3 +30,11 @@ The design uses a purple/indigo visual identity, large editorial typography, a d
 ## Important
 
 The contact form uses `mailto:`. For production, connect it to a backend/API or a form service instead.
+
+## Persian version (RTL)
+
+- English page: `index.html` — Persian page: `fa/index.html` (served at `/fa/`).
+- The "فارسی" button (English page) and "English" button (Persian page) sit in the navbar.
+- Shared assets: `css/style.css`, `js/script.js`; Persian-only: `css/rtl.css`, `css/fonts.css`.
+- Persian font: Vazirmatn. Put `Vazirmatn-Variable.woff2` in `fonts/` (see `fonts/README.txt`);
+  until then the font loads automatically from the jsDelivr CDN.

@@ -1,0 +1,59 @@
+/* ===== Persian (RTL) overrides — loaded AFTER style.css ===== */
+:root{--fa-font:"Vazirmatn","Vazirmatn CDN",Tahoma,"Segoe UI",system-ui,sans-serif}
+html[lang="fa"] body,
+html[lang="fa"] .contact-form input,
+html[lang="fa"] .contact-form textarea,
+html[lang="fa"] .btn{font-family:var(--fa-font)}
+html[lang="fa"] body{line-height:1.8}
+
+/* Persian letters must connect: no letter-spacing anywhere */
+html[lang="fa"] *{letter-spacing:0!important}
+html[lang="fa"] .eyebrow,html[lang="fa"] .section-kicker{font-size:.82rem;font-weight:700}
+
+/* Headings: taller line-height & smaller scale for Persian script */
+html[lang="fa"] .hero h1{font-size:clamp(2.5rem,5.4vw,4.6rem);line-height:1.4;font-weight:800}
+html[lang="fa"] .section-intro h2{font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.4;font-weight:800}
+html[lang="fa"] .contact-copy h2{font-size:clamp(2.1rem,4.2vw,3.6rem);line-height:1.4}
+html[lang="fa"] .project-placeholder h3{font-size:1.8rem;line-height:1.5}
+html[lang="fa"] .navbar-brand{font-weight:800}
+
+/* Readable small text */
+html[lang="fa"] .nav-link{font-size:.92rem}
+html[lang="fa"] .availability{font-size:.82rem}
+html[lang="fa"] .hero-copy{font-size:1.08rem;line-height:2}
+html[lang="fa"] .floating-stat small{font-size:.74rem}
+html[lang="fa"] .mini-stats span{font-size:.82rem}
+html[lang="fa"] .journey-item small{font-size:.76rem}
+html[lang="fa"] .journey-item p,html[lang="fa"] .about-copy p{line-height:2}
+html[lang="fa"] .skill p{font-size:.8rem}
+html[lang="fa"] .tags span{font-size:.72rem}
+html[lang="fa"] .project p,html[lang="fa"] .process p{font-size:.92rem;line-height:2}
+html[lang="fa"] .project-body>a,html[lang="fa"] .text-link{font-size:.85rem}
+html[lang="fa"] .contact-form label{font-size:.85rem}
+html[lang="fa"] .contact-form input,html[lang="fa"] .contact-form textarea{font-size:.9rem}
+html[lang="fa"] .footer-main p,html[lang="fa"] .footer-links,html[lang="fa"] .footer-bottom{font-size:.8rem}
+
+/* Code card stays LTR (it's Python code) */
+.code-card{direction:ltr;text-align:left}
+
+/* Mirror absolutely-positioned decorations */
+.hero:after{right:auto;left:-180px}
+.stat-top{right:auto;left:0}
+.stat-bottom{left:auto;right:5px}
+.project-cover span{right:auto;left:20px}
+.process>span{right:auto;left:25px}
+.journey-line{left:auto;right:27px}
+.photo-note{left:auto;right:18px}
+@media(max-width:767px){
+  .stat-top{right:auto;left:-3px}
+  .stat-bottom{left:auto;right:-3px}
+}
+
+/* Directional icons */
+.bi-send{display:inline-block;transform:scaleX(-1)}
+
+/* LTR islands inside RTL text */
+.ltr,.contact-email{direction:ltr;unicode-bidi:isolate}
+.contact-email{display:inline-flex}
+.contact-form input[type="email"]{direction:ltr;text-align:right}
+.contact-form input[type="email"]::placeholder{text-align:right}

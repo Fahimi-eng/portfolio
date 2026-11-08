@@ -1,0 +1,13 @@
+/* Persian font: Vazirmatn (open source, SIL OFL) — https://github.com/rastikerdar/vazirmatn
+   1) Local file:  fonts/Vazirmatn-Variable.woff2  (see fonts/README.txt)
+   2) Automatic CDN fallback if the local file is missing. */
+@font-face{
+  font-family:"Vazirmatn";
+  src:url("../fonts/Vazirmatn-Variable.woff2") format("woff2");
+  font-weight:100 900;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"Vazirmatn CDN";
+  src:url("https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/fonts/webfonts/Vazirmatn%5Bwght%5D.woff2") format("woff2");
+  font-weight:100 900;font-style:normal;font-display:swap;
+}

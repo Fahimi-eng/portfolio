@@ -5,12 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Alireza Fahimi — Software Developer focused on backend engineering, Python, AI and modern web applications.">
   <title>Alireza Fahimi — Software Developer & AI Engineer</title>
+
+
+
+  <!-- open graph -->
+	<meta property="og:site_name" content="Alireza Fahimi">
+	<meta property="og:title" content="Alireza Fahimi | Software Engineer & AI Solutions Builder">
+
+	<meta property="og:url" content="https://mrfahimi.com">
+	<meta property="og:type" content="website" />
+
+	<meta property="og:image" content="https://mrfahimi.com/images/avatar.png">
+	<meta property="og:image:url" content="https://mrfahimi.com/assets/images/avatar2.png">
+	<meta property="og:image:type" content="image/jpg">
+
+	<meta property="og:image:width" content="700">
+	<meta property="og:image:height" content="500">
+
+	<meta property="og:image:alt" content="Portrait of Alireza Fahimi">
+	<meta property="og:description" content="Software engineer building reliable websites, business systems, and AI-powered solutions.">
+	<meta property="og:price:currency" content="IRR">
+	<meta property="og:locale" content="ir_FA">
+
+	<!-- twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Alireza Fahimi | Software Engineer & AI Solutions Builder">
+	<meta name="twitter:description" content="Building reliable websites, business systems, and AI-powered solutions.">
+	<meta name="twitter:image" content="https://mrfahimi.com/assets/images/avatar2.png">
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- language versions -->
+  <link rel="alternate" hreflang="en" href="https://mrfahimi.com/">
+  <link rel="alternate" hreflang="fa" href="https://mrfahimi.com/fa/">
+  <link rel="alternate" hreflang="x-default" href="https://mrfahimi.com/">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alireza Fahimi",
+      "url": "https://mrfahimi.com",
+      "image": "https://mrfahimi.com/images/avatar.png",
+      "jobTitle": "Software Engineer",
+      "email": "mailto:info@mrfahimi.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tehran",
+        "addressCountry": "IR"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/fahimieng/",
+        "https://github.com/fahimi-eng",
+        "https://www.instagram.com/fahimi_eng"
+      ],
+      "knowsAbout": ["PHP", "Laravel", "JavaScript", "MySQL", "REST APIs", "AI Automation", "Machine Learning"]
+    }
+	</script>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
@@ -29,6 +89,7 @@
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
+        <a href="fa/" class="lang-btn" lang="fa" hreflang="fa" title="نسخه فارسی">فارسی</a>
         <button class="theme-btn" id="themeToggle" aria-label="Toggle theme"><i class="bi bi-moon-stars"></i></button>
         <a href="#contact" class="btn btn-primary-custom">Let's talk <i class="bi bi-arrow-up-right"></i></a>
       </div>
@@ -94,7 +155,7 @@
     <div class="row g-5 align-items-center">
       <div class="col-lg-5">
         <div class="about-visual reveal">
-          <div class="avatar-placeholder"><img class="profile-image" src="./assets/images/profile.png" alt=""></div>
+          <div class="avatar-placeholder"><img style="max-height:100%" src="./assets/images/profile.png" alt=""></div>
         </div>
       </div>
       <div class="col-lg-7">

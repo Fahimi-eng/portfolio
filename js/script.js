@@ -49,18 +49,21 @@ document.querySelectorAll(".nav-link").forEach(link=>{
   });
 });
 
-document.getElementById("year").textContent=new Date().getFullYear();
+const isFa=document.documentElement.lang==="fa";
+document.getElementById("year").textContent=isFa
+  ?new Intl.DateTimeFormat("fa-IR",{year:"numeric"}).format(new Date())
+  :new Date().getFullYear();
 
 const form=document.getElementById("contactForm");
 form.addEventListener("submit",e=>{
   e.preventDefault();
   const data=new FormData(form);
-  const subject=encodeURIComponent(data.get("name")+" — Portfolio contact");
+  const subject=encodeURIComponent(data.get("name")+(isFa?" — پیام از پورتفولیو":" — Portfolio contact"));
   const body=encodeURIComponent(
-    "Name: "+data.get("name")+"\n"+
-    "Email: "+data.get("email")+"\n\n"+
+    (isFa?"نام: ":"Name: ")+data.get("name")+"\n"+
+    (isFa?"ایمیل: ":"Email: ")+data.get("email")+"\n\n"+
     data.get("message")
   );
   window.location.href=`mailto:hello@example.com?subject=${subject}&body=${body}`;
-  document.getElementById("formMessage").textContent="Opening your email client...";
+  document.getElementById("formMessage").textContent=isFa?"در حال باز کردن برنامه ایمیل...":"Opening your email client...";
 });
