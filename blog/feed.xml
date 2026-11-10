@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Blog — Alireza Fahimi</title>
+  <link>https://mrfahimi.com/blog/</link>
+  <description>Articles about Python, AI, Laravel, backend development and my journey from software support to engineering.</description>
+  <language>en</language>
+  <atom:link href="https://mrfahimi.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>A Practical Python Roadmap for Aspiring AI Engineers</title>
+    <link>https://mrfahimi.com/blog/python-ai-roadmap/</link>
+    <guid isPermaLink="true">https://mrfahimi.com/blog/python-ai-roadmap/</guid>
+    <pubDate>Mon, 02 Nov 2026 09:00:00 +0000</pubDate>
+    <category>Python &amp; AI</category>
+    <description>Where do you start when moving from web development into AI? The order I&#x27;d follow today: practical, project-first and without the overwhelm.</description>
+  </item>
+  <item>
+    <title>Laravel REST API Best Practices I Wish I Knew Earlier</title>
+    <link>https://mrfahimi.com/blog/laravel-rest-api-best-practices/</link>
+    <guid isPermaLink="true">https://mrfahimi.com/blog/laravel-rest-api-best-practices/</guid>
+    <pubDate>Tue, 20 Oct 2026 09:00:00 +0000</pubDate>
+    <category>Backend</category>
+    <description>API resources, form requests, versioning and consistent errors: four habits that make a Laravel API easier to grow and easier to trust.</description>
+  </item>
+  <item>
+    <title>From Software Support to Software Engineer: How My Thinking Changed</title>
+    <link>https://mrfahimi.com/blog/from-support-to-software-engineer/</link>
+    <guid isPermaLink="true">https://mrfahimi.com/blog/from-support-to-software-engineer/</guid>
+    <pubDate>Mon, 05 Oct 2026 09:00:00 +0000</pubDate>
+    <category>Career</category>
+    <description>Years of talking to real users taught me things no course did. Here is what I carried from the support desk into engineering.</description>
+  </item>
+</channel>
+</rss>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="API Resource، Form Request، نسخه‌بندی و خطاهای یکدست: چهار عادتی که توسعه و اعتماد به یک API لاراولی را ساده‌تر می‌کنند.">
+  <title>بهترین روش‌های ساخت REST API در لاراول که ای کاش زودتر می‌دانستم | علیرضا فهیمی</title>
+  <link rel="canonical" href="https://mrfahimi.com/fa/blog/laravel-rest-api-best-practices/">
+  <link rel="alternate" hreflang="fa" href="https://mrfahimi.com/fa/blog/laravel-rest-api-best-practices/">
+  <link rel="alternate" hreflang="en" href="https://mrfahimi.com/blog/laravel-rest-api-best-practices/">
+  <link rel="alternate" hreflang="x-default" href="https://mrfahimi.com/blog/laravel-rest-api-best-practices/">
+  <link rel="alternate" type="application/rss+xml" title="خوراک RSS" href="https://mrfahimi.com/fa/blog/feed.xml">
+  <meta property="og:site_name" content="علیرضا فهیمی">
+  <meta property="og:title" content="بهترین روش‌های ساخت REST API در لاراول که ای کاش زودتر می‌دانستم | علیرضا فهیمی">
+  <meta property="og:description" content="API Resource، Form Request، نسخه‌بندی و خطاهای یکدست: چهار عادتی که توسعه و اعتماد به یک API لاراولی را ساده‌تر می‌کنند.">
+  <meta property="og:url" content="https://mrfahimi.com/fa/blog/laravel-rest-api-best-practices/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://mrfahimi.com/assets/images/avatar2.png">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="بهترین روش‌های ساخت REST API در لاراول که ای کاش زودتر می‌دانستم | علیرضا فهیمی">
+  <meta name="twitter:description" content="API Resource، Form Request، نسخه‌بندی و خطاهای یکدست: چهار عادتی که توسعه و اعتماد به یک API لاراولی را ساده‌تر می‌کنند.">
+  <meta name="twitter:image" content="https://mrfahimi.com/assets/images/avatar2.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="icon" href="../../../assets/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../../css/fonts.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="../../../css/blog.css">
+  <link rel="stylesheet" href="../../../css/rtl.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "بهترین روش‌های ساخت REST API در لاراول که ای کاش زودتر می‌دانستم", "description": "API Resource، Form Request، نسخه‌بندی و خطاهای یکدست: چهار عادتی که توسعه و اعتماد به یک API لاراولی را ساده‌تر می‌کنند.", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "inLanguage": "fa", "mainEntityOfPage": "https://mrfahimi.com/fa/blog/laravel-rest-api-best-practices/", "image": "https://mrfahimi.com/assets/images/avatar2.png", "articleSection": "بک‌اند", "keywords": "لاراول, PHP, API, MySQL", "author": {"@type": "Person", "name": "علیرضا فهیمی", "url": "https://mrfahimi.com/"}, "publisher": {"@type": "Person", "name": "علیرضا فهیمی", "url": "https://mrfahimi.com/"}}</script>
+</head>
+<body data-page="blog-post" data-base="../../" data-root="../../../" data-slug="laravel-rest-api-best-practices">
+<div class="read-progress"><span id="readProgress"></span></div>
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="../../">AF<span>.</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="باز و بسته کردن منو"><i class="bi bi-list"></i></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="../../">خانه</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../#about">درباره من</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../#journey">مسیر من</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../#skills">مهارت‌ها</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../#projects">پروژه‌ها</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../../blog/">وبلاگ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../#contact">تماس</a></li>
+        </ul>
+      <div class="nav-actions">
+        <a href="../../../blog/laravel-rest-api-best-practices/" class="lang-btn" lang="en" hreflang="en" title="English version">English</a>
+        <button class="theme-btn" id="themeToggle" aria-label="تغییر پوسته روشن/تاریک"><i class="bi bi-moon-stars"></i></button>
+        <a href="../../#contact" class="btn btn-primary-custom">بیایید صحبت کنیم <i class="bi bi-arrow-up-left"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+<main>
+<article>
+  <header class="post-hero"><div class="container"><div class="narrow">
+    <ol class="crumbs"><li><a href="../../">خانه</a></li><li><a href="../../blog/">وبلاگ</a></li><li aria-current="page">بهترین روش‌های ساخت REST API در لاراول که ای کاش زودتر می‌دانستم</li></ol>
+    <a class="post-cat" href="../../blog/?cat=%D8%A8%DA%A9%E2%80%8C%D8%A7%D9%86%D8%AF">بک‌اند</a>
+    <h1>بهترین روش‌های ساخت REST API در لاراول که ای کاش زودتر می‌دانستم</h1>
+    <p class="post-lede">API Resource، Form Request، نسخه‌بندی و خطاهای یکدست: چهار عادتی که توسعه و اعتماد به یک API لاراولی را ساده‌تر می‌کنند.</p>
+    <div class="post-byline">
+      <span class="author"><img src="../../../assets/images/avatar2.png" alt="علیرضا فهیمی"><span>علیرضا فهیمی</span></span>
+      <span><i class="bi bi-calendar3"></i><time class="js-date" data-date="2026-10-20" datetime="2026-10-20">2026-10-20</time></span>
+      <span><i class="bi bi-clock"></i><span class="js-readtime">2 دقیقه مطالعه</span></span>
+    </div>
+  </div></div></header>
+  <div class="container"><div class="post-cover cover-blue"><i class="bi bi-layers"></i></div></div>
+  <div class="container post-layout">
+    <aside class="post-side">
+      <details class="toc" open><summary>در این مطلب</summary><nav id="toc" aria-label="در این مطلب"></nav></details>
+      <div class="side-share"><div class="share-row js-share"><span>اشتراک‌گذاری</span></div></div>
+    </aside>
+    <div class="post-body">
+      <div class="post-content">
+<div class="callout note"><i class="bi bi-info-circle"></i><p><strong>مطلب نمونه.</strong> این متن فقط برای نمایش قالب است. آن را با نوشته‌های خودتان جایگزین کنید و سپس این یادداشت را حذف کنید.</p></div>
+<h2 id="resources">با API Resource خروجی JSON یکدست بدهید</h2>
+<p>برگرداندن مستقیم مدل‌های Eloquent ساختار پایگاه داده شما را در API عمومی نشت می‌دهد. API Resource یک جای واحد به شما می‌دهد تا دقیقاً تصمیم بگیرید کلاینت‌ها چه چیزی دریافت کنند.</p>
+<pre><code class="language-php">class PostResource extends JsonResource
+{
+    public function toArray($request): array
+    {
+        return [
+            'id'         =&gt; $this-&gt;id,
+            'title'      =&gt; $this-&gt;title,
+            'author'     =&gt; $this-&gt;user-&gt;name,
+            'created_at' =&gt; $this-&gt;created_at-&gt;toIso8601String(),
+        ];
+    }
+}</code></pre>
+<h2 id="form-requests">اعتبارسنجی را به Form Request بسپارید</h2>
+<p>به‌جای پر کردن کنترلرها با قوانین اعتبارسنجی، آن‌ها را در یک Form Request جدا بنویسید. کنترلرها کوتاه می‌مانند و قوانین قابل‌استفاده مجدد و تست‌پذیر می‌شوند.</p>
+<pre><code class="language-php">class StorePostRequest extends FormRequest
+{
+    public function rules(): array
+    {
+        return [
+            'title' =&gt; ['required', 'string', 'max:120'],
+            'body'  =&gt; ['required', 'string'],
+        ];
+    }
+}</code></pre>
+<div class="callout note"><i class="bi bi-info-circle"></i><p><strong>قاعده سرانگشتی:</strong> اگر متد یک کنترلر از چند خط بیشتر شد، احتمالاً کاری انجام می‌دهد که جای دیگری باید باشد.</p></div>
+<h2 id="versioning">از روز اول API را نسخه‌بندی کنید</h2>
+<p>تغییر قرارداد یک API بدون نسخه‌بندی یعنی خراب کردن کلاینت‌هایی که شاید اصلاً نمی‌شناسید. یک پیشوند ساده در مسیرها کافی است تا برای تکامل API جا داشته باشید:</p>
+<pre><code class="language-php">Route::prefix('v1')-&gt;group(function () {
+    Route::apiResource('posts', PostController::class);
+});</code></pre>
+<h2 id="errors">کدهای وضعیت و خطاها را یکدست نگه دارید</h2>
+<p>کلاینت باید بتواند بدون تجزیه یک جمله انسانی به خطا واکنش نشان دهد. مجموعه کوچکی از کدهای وضعیت انتخاب کنید، همه‌جا از آن‌ها استفاده کنید و خطاها را در یک قالب قابل‌پیش‌بینی برگردانید.</p>
+<table><thead><tr><th>کد وضعیت</th><th>زمان استفاده</th></tr></thead><tbody><tr><td><code>200 OK</code></td><td>خواندن یا به‌روزرسانی موفق</td></tr><tr><td><code>201 Created</code></td><td>ساخته شدن منبع جدید</td></tr><tr><td><code>204 No Content</code></td><td>حذف موفق</td></tr><tr><td><code>401 Unauthorized</code></td><td>نبود یا نامعتبر بودن اعتبارنامه</td></tr><tr><td><code>403 Forbidden</code></td><td>کاربر شناخته‌شده است ولی اجازه ندارد</td></tr><tr><td><code>404 Not Found</code></td><td>منبع وجود ندارد</td></tr><tr><td><code>422 Unprocessable Entity</code></td><td>اعتبارسنجی ناموفق</td></tr><tr><td><code>429 Too Many Requests</code></td><td>رسیدن به سقف تعداد درخواست</td></tr></tbody></table>
+<div class="callout warn"><i class="bi bi-exclamation-triangle"></i><p><strong>هشدار:</strong> هرگز پیام خام استثناها را در محیط production به کلاینت برنگردانید؛ جزئیات داخلی سیستم شما را فاش می‌کند.</p></div>
+
+      </div>
+      <div class="post-foot">
+        <div class="post-tags"><span>برچسب‌ها</span><a class="tag-pill" href="../../blog/?tag=%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84">#لاراول</a><a class="tag-pill" href="../../blog/?tag=PHP">#PHP</a><a class="tag-pill" href="../../blog/?tag=API">#API</a><a class="tag-pill" href="../../blog/?tag=MySQL">#MySQL</a></div>
+        <div class="share-row js-share"><span>اشتراک‌گذاری</span></div>
+        <div class="author-box"><img src="../../../assets/images/avatar2.png" alt="علیرضا فهیمی"><div><small>نویسنده</small><h4>علیرضا فهیمی</h4><p>توسعه‌دهنده نرم‌افزار با تمرکز بر بک‌اند، پایتون و هوش مصنوعی. درباره چیزهایی که می‌سازم و یاد می‌گیرم می‌نویسم.</p><div class="social-row" style="justify-content:flex-start"><a href="https://github.com/fahimi-eng" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a><a href="https://www.linkedin.com/in/fahimieng/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://instagram.com/fahimi-eng" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a></div></div></div>
+        <div class="post-nav" id="postNav"></div>
+        <div class="widget newsletter wide"><div class="nl-copy"><h3>از این مطلب خوشتان آمد؟</h3><p>مطالب تازه درباره پایتون، هوش مصنوعی و توسعه بک‌اند را در ایمیل خود دریافت کنید.</p></div><form class="js-newsletter" novalidate>
+        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email">
+        <button type="submit">عضویت</button><small class="js-nl-msg"></small></form></div>
+        <div class="comments-box" id="comments"><h3>دیدگاه‌ها</h3></div>
+      </div>
+    </div>
+  </div>
+</article>
+<section class="related"><div class="container"><h2>مطالب مرتبط</h2><div class="post-grid cols-3" id="relatedPosts"></div></div></section>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div><a href="../../" class="footer-brand">علیرضا<span>.</span></a><p>توسعه‌دهنده نرم‌افزار · مهندس هوش مصنوعی</p></div>
+      <div class="footer-links"><a href="../../#about">درباره من</a><a href="../../#projects">پروژه‌ها</a><a href="../../blog/">وبلاگ</a><a href="../../#contact">تماس</a><a href="https://github.com/fahimi-eng" target="_blank" rel="noreferrer">GitHub</a><a href="../../blog/feed.xml">RSS</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> علیرضا فهیمی</span><span>ساخته‌شده با HTML · CSS · Bootstrap · JavaScript</span></div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../../../js/script.js"></script>
+<script src="../../../js/blog-data.js"></script>
+<script src="../../../js/blog.js"></script>
+</body>
+</html>

@@ -31,14 +31,17 @@ const sections=document.querySelectorAll("main section[id]");
 const links=document.querySelectorAll(".nav-link");
 window.addEventListener("scroll",()=>{
   navbar.classList.toggle("scrolled",window.scrollY>20);
+  if(!sections.length) return;
   let current="";
   sections.forEach(section=>{
     if(window.scrollY>=section.offsetTop-140) current=section.id;
   });
   links.forEach(link=>{
-    link.classList.toggle("active",link.getAttribute("href")==="#"+current);
+    const href=link.getAttribute("href");
+    if(href&&href.startsWith("#")) link.classList.toggle("active",href==="#"+current);
   });
 });
+navbar.classList.toggle("scrolled",window.scrollY>20);
 
 document.querySelectorAll(".nav-link").forEach(link=>{
   link.addEventListener("click",()=>{
@@ -50,12 +53,13 @@ document.querySelectorAll(".nav-link").forEach(link=>{
 });
 
 const isFa=document.documentElement.lang==="fa";
-document.getElementById("year").textContent=isFa
+const yearEl=document.getElementById("year");
+if(yearEl) yearEl.textContent=isFa
   ?new Intl.DateTimeFormat("fa-IR",{year:"numeric"}).format(new Date())
   :new Date().getFullYear();
 
 const form=document.getElementById("contactForm");
-form.addEventListener("submit",e=>{
+if(form) form.addEventListener("submit",e=>{
   e.preventDefault();
   const data=new FormData(form);
   const subject=encodeURIComponent(data.get("name")+(isFa?" — پیام از پورتفولیو":" — Portfolio contact"));

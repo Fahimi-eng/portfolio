@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>وبلاگ — علیرضا فهیمی</title>
+  <link>https://mrfahimi.com/fa/blog/</link>
+  <description>مقاله‌هایی درباره پایتون، هوش مصنوعی، لاراول، توسعه بک‌اند و مسیر من از پشتیبانی نرم‌افزار تا مهندسی.</description>
+  <language>fa</language>
+  <atom:link href="https://mrfahimi.com/fa/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>نقشه راه عملی پایتون برای کسانی که می‌خواهند مهندس هوش مصنوعی شوند</title>
+    <link>https://mrfahimi.com/fa/blog/python-ai-roadmap/</link>
+    <guid isPermaLink="true">https://mrfahimi.com/fa/blog/python-ai-roadmap/</guid>
+    <pubDate>Mon, 02 Nov 2026 09:00:00 +0000</pubDate>
+    <category>پایتون و هوش مصنوعی</category>
+    <description>از کجا شروع کنیم وقتی از توسعه وب به سمت هوش مصنوعی می‌رویم؟ ترتیبی که امروز دنبال می‌کردم: عملی، پروژه‌محور و بدون سردرگمی.</description>
+  </item>
+  <item>
+    <title>بهترین روش‌های ساخت REST API در لاراول که ای کاش زودتر می‌دانستم</title>
+    <link>https://mrfahimi.com/fa/blog/laravel-rest-api-best-practices/</link>
+    <guid isPermaLink="true">https://mrfahimi.com/fa/blog/laravel-rest-api-best-practices/</guid>
+    <pubDate>Tue, 20 Oct 2026 09:00:00 +0000</pubDate>
+    <category>بک‌اند</category>
+    <description>API Resource، Form Request، نسخه‌بندی و خطاهای یکدست: چهار عادتی که توسعه و اعتماد به یک API لاراولی را ساده‌تر می‌کنند.</description>
+  </item>
+  <item>
+    <title>از پشتیبانی نرم‌افزار تا مهندسی نرم‌افزار: نگاهم چه تغییری کرد</title>
+    <link>https://mrfahimi.com/fa/blog/from-support-to-software-engineer/</link>
+    <guid isPermaLink="true">https://mrfahimi.com/fa/blog/from-support-to-software-engineer/</guid>
+    <pubDate>Mon, 05 Oct 2026 09:00:00 +0000</pubDate>
+    <category>مسیر شغلی</category>
+    <description>سال‌ها صحبت با کاربران واقعی چیزهایی به من یاد داد که هیچ دوره‌ای نداد. این‌ها چیزهایی است که از میز پشتیبانی به مهندسی آوردم.</description>
+  </item>
+</channel>
+</rss>

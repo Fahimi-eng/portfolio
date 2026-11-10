@@ -38,3 +38,26 @@ The contact form uses `mailto:`. For production, connect it to a backend/API or 
 - Shared assets: `css/style.css`, `js/script.js`; Persian-only: `css/rtl.css`, `css/fonts.css`.
 - Persian font: Vazirmatn. Put `Vazirmatn-Variable.woff2` in `fonts/` (see `fonts/README.txt`);
   until then the font loads automatically from the jsDelivr CDN.
+
+## Blog (English `/blog/`, Persian `/fa/blog/`)
+
+Static, no build step and no database. Each post is its own HTML page (good for SEO);
+the listing, search, filters, pagination, related posts and the "latest posts" block on the
+home page are driven by one data file: `js/blog-data.js`.
+
+Features: featured post, live search, category chips, tag filter, sort, pagination (URL-based, shareable),
+sidebar (author, categories, recent posts, tag cloud, newsletter), breadcrumbs, reading progress bar,
+auto table of contents with scroll-spy, heading anchors, syntax highlighting + copy button,
+callouts / tables / quotes / figures, share buttons (X, LinkedIn, Telegram, WhatsApp, copy link),
+author box, previous/next, related posts, newsletter form, optional Giscus comments,
+JSON-LD (BlogPosting), Open Graph, hreflang between translations, RSS feeds, back-to-top, print styles.
+
+### Publish a new post
+1. Copy `blog/_post-template/` to `blog/<your-slug>/` (Persian: `fa/blog/_post-template/` → `fa/blog/<slug>/`).
+2. In the new `index.html` edit: `<title>`, meta description, canonical, `data-slug`, title, excerpt,
+   category, dates, cover icon/color, tags and the content inside `.post-content`. Remove `noindex`.
+3. Add one entry to `js/blog-data.js` (same slug; set `translation` if the other language exists).
+4. Add the URL to `sitemap.xml` and an `<item>` to `blog/feed.xml`.
+
+The three sample posts are placeholders — replace or delete them (folder + entry in `blog-data.js` + sitemap + feed).
+Settings (posts per page, newsletter endpoint, comments) live at the top of `js/blog-data.js`.

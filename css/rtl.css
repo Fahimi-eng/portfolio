@@ -57,3 +57,20 @@ html[lang="fa"] .footer-main p,html[lang="fa"] .footer-links,html[lang="fa"] .fo
 .contact-email{display:inline-flex}
 .contact-form input[type="email"]{direction:ltr;text-align:right}
 .contact-form input[type="email"]::placeholder{text-align:right}
+
+/* ===== Blog (RTL / Persian) ===== */
+html[lang="fa"] .blog-hero h1{font-size:clamp(2.2rem,4.6vw,3.4rem);line-height:1.4}
+html[lang="fa"] .post-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.55;font-weight:800}
+html[lang="fa"] .post-lede{font-size:1.05rem;line-height:2.1}
+html[lang="fa"] .post-content{font-size:1.08rem;line-height:2.15}
+html[lang="fa"] .post-content h2{font-size:1.55rem;line-height:1.6}
+html[lang="fa"] .post-content h3{font-size:1.25rem;line-height:1.6}
+html[lang="fa"] .post-card h3{font-size:1.1rem;line-height:1.7}
+html[lang="fa"] .post-card p,html[lang="fa"] .about-widget p,html[lang="fa"] .author-box p,html[lang="fa"] .newsletter p{font-size:.88rem;line-height:2}
+html[lang="fa"] .post-meta,html[lang="fa"] .crumbs,html[lang="fa"] .mini-post small,html[lang="fa"] .post-byline{font-size:.8rem}
+html[lang="fa"] .chip,html[lang="fa"] .tag-pill,html[lang="fa"] .sort-select,html[lang="fa"] .read-more,html[lang="fa"] .post-chip{font-size:.8rem}
+html[lang="fa"] .widget h4,html[lang="fa"] .toc summary,html[lang="fa"] .author-box small{font-size:.82rem;text-transform:none}
+html[lang="fa"] .toc a{font-size:.86rem}
+html[lang="fa"] .blog-search input,html[lang="fa"] .newsletter input,html[lang="fa"] .newsletter button,html[lang="fa"] .page-btn,html[lang="fa"] .chip,html[lang="fa"] .sort-select,html[lang="fa"] .copy-btn{font-family:var(--fa-font)}
+html[lang="fa"] .blog-search input{text-align:start}
+html[lang="fa"] .copy-btn,html[lang="fa"] .code-lang{font-family:ui-monospace,monospace}

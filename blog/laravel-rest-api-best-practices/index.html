@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="API resources, form requests, versioning and consistent errors: four habits that make a Laravel API easier to grow and easier to trust.">
+  <title>Laravel REST API Best Practices I Wish I Knew Earlier | Alireza Fahimi</title>
+  <link rel="canonical" href="https://mrfahimi.com/blog/laravel-rest-api-best-practices/">
+  <link rel="alternate" hreflang="en" href="https://mrfahimi.com/blog/laravel-rest-api-best-practices/">
+  <link rel="alternate" hreflang="fa" href="https://mrfahimi.com/fa/blog/laravel-rest-api-best-practices/">
+  <link rel="alternate" hreflang="x-default" href="https://mrfahimi.com/blog/laravel-rest-api-best-practices/">
+  <link rel="alternate" type="application/rss+xml" title="RSS feed" href="https://mrfahimi.com/blog/feed.xml">
+  <meta property="og:site_name" content="Alireza Fahimi">
+  <meta property="og:title" content="Laravel REST API Best Practices I Wish I Knew Earlier | Alireza Fahimi">
+  <meta property="og:description" content="API resources, form requests, versioning and consistent errors: four habits that make a Laravel API easier to grow and easier to trust.">
+  <meta property="og:url" content="https://mrfahimi.com/blog/laravel-rest-api-best-practices/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://mrfahimi.com/assets/images/avatar2.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fa_IR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Laravel REST API Best Practices I Wish I Knew Earlier | Alireza Fahimi">
+  <meta name="twitter:description" content="API resources, form requests, versioning and consistent errors: four habits that make a Laravel API easier to grow and easier to trust.">
+  <meta name="twitter:image" content="https://mrfahimi.com/assets/images/avatar2.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="icon" href="../../assets/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../css/fonts.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Laravel REST API Best Practices I Wish I Knew Earlier", "description": "API resources, form requests, versioning and consistent errors: four habits that make a Laravel API easier to grow and easier to trust.", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "inLanguage": "en", "mainEntityOfPage": "https://mrfahimi.com/blog/laravel-rest-api-best-practices/", "image": "https://mrfahimi.com/assets/images/avatar2.png", "articleSection": "Backend", "keywords": "Laravel, PHP, API, MySQL", "author": {"@type": "Person", "name": "Alireza Fahimi", "url": "https://mrfahimi.com/"}, "publisher": {"@type": "Person", "name": "Alireza Fahimi", "url": "https://mrfahimi.com/"}}</script>
+</head>
+<body data-page="blog-post" data-base="../../" data-root="../../" data-slug="laravel-rest-api-best-practices">
+<div class="read-progress"><span id="readProgress"></span></div>
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="../../">AF<span>.</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle menu"><i class="bi bi-list"></i></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="../../">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../#journey">Journey</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../../blog/">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../#contact">Contact</a></li>
+        </ul>
+      <div class="nav-actions">
+        <a href="../../fa/blog/laravel-rest-api-best-practices/" class="lang-btn" lang="fa" hreflang="fa" title="نسخه فارسی">فارسی</a>
+        <button class="theme-btn" id="themeToggle" aria-label="Toggle light/dark theme"><i class="bi bi-moon-stars"></i></button>
+        <a href="../../#contact" class="btn btn-primary-custom">Let's talk <i class="bi bi-arrow-up-right"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+<main>
+<article>
+  <header class="post-hero"><div class="container"><div class="narrow">
+    <ol class="crumbs"><li><a href="../../">Home</a></li><li><a href="../../blog/">Blog</a></li><li aria-current="page">Laravel REST API Best Practices I Wish I Knew Earlier</li></ol>
+    <a class="post-cat" href="../../blog/?cat=Backend">Backend</a>
+    <h1>Laravel REST API Best Practices I Wish I Knew Earlier</h1>
+    <p class="post-lede">API resources, form requests, versioning and consistent errors: four habits that make a Laravel API easier to grow and easier to trust.</p>
+    <div class="post-byline">
+      <span class="author"><img src="../../assets/images/avatar2.png" alt="Alireza Fahimi"><span>Alireza Fahimi</span></span>
+      <span><i class="bi bi-calendar3"></i><time class="js-date" data-date="2026-10-20" datetime="2026-10-20">2026-10-20</time></span>
+      <span><i class="bi bi-clock"></i><span class="js-readtime">2 min read</span></span>
+    </div>
+  </div></div></header>
+  <div class="container"><div class="post-cover cover-blue"><i class="bi bi-layers"></i></div></div>
+  <div class="container post-layout">
+    <aside class="post-side">
+      <details class="toc" open><summary>On this page</summary><nav id="toc" aria-label="On this page"></nav></details>
+      <div class="side-share"><div class="share-row js-share"><span>Share</span></div></div>
+    </aside>
+    <div class="post-body">
+      <div class="post-content">
+<div class="callout note"><i class="bi bi-info-circle"></i><p><strong>Sample article.</strong> This text is placeholder content that ships with the template. Replace it with your own writing, then delete this note.</p></div>
+<h2 id="resources">Return consistent JSON with API Resources</h2>
+<p>Returning Eloquent models directly leaks your database structure into your public API. API Resources give you a single place to decide exactly what clients receive.</p>
+<pre><code class="language-php">class PostResource extends JsonResource
+{
+    public function toArray($request): array
+    {
+        return [
+            'id'         =&gt; $this-&gt;id,
+            'title'      =&gt; $this-&gt;title,
+            'author'     =&gt; $this-&gt;user-&gt;name,
+            'created_at' =&gt; $this-&gt;created_at-&gt;toIso8601String(),
+        ];
+    }
+}</code></pre>
+<h2 id="form-requests">Validate with Form Requests</h2>
+<p>Instead of filling controllers with validation rules, move them into a dedicated Form Request. Controllers stay short, and the rules become reusable and easy to test.</p>
+<pre><code class="language-php">class StorePostRequest extends FormRequest
+{
+    public function rules(): array
+    {
+        return [
+            'title' =&gt; ['required', 'string', 'max:120'],
+            'body'  =&gt; ['required', 'string'],
+        ];
+    }
+}</code></pre>
+<div class="callout note"><i class="bi bi-info-circle"></i><p><strong>Rule of thumb:</strong> if a controller method grows past a handful of lines, it is probably doing work that belongs somewhere else.</p></div>
+<h2 id="versioning">Version your API from day one</h2>
+<p>Changing an unversioned API means breaking clients you may not even know about. A simple route prefix is enough to give yourself room to evolve:</p>
+<pre><code class="language-php">Route::prefix('v1')-&gt;group(function () {
+    Route::apiResource('posts', PostController::class);
+});</code></pre>
+<h2 id="errors">Use status codes and errors consistently</h2>
+<p>Clients should be able to react to an error without parsing a human sentence. Pick a small set of status codes, use them everywhere, and return errors in one predictable shape.</p>
+<table><thead><tr><th>Status</th><th>When to use it</th></tr></thead><tbody><tr><td><code>200 OK</code></td><td>Successful read or update</td></tr><tr><td><code>201 Created</code></td><td>A new resource was created</td></tr><tr><td><code>204 No Content</code></td><td>Successful delete</td></tr><tr><td><code>401 Unauthorized</code></td><td>Missing or invalid credentials</td></tr><tr><td><code>403 Forbidden</code></td><td>Authenticated but not allowed</td></tr><tr><td><code>404 Not Found</code></td><td>The resource does not exist</td></tr><tr><td><code>422 Unprocessable Entity</code></td><td>Validation failed</td></tr><tr><td><code>429 Too Many Requests</code></td><td>Rate limit reached</td></tr></tbody></table>
+<div class="callout warn"><i class="bi bi-exclamation-triangle"></i><p><strong>Warning:</strong> never return raw exception messages to clients in production. They expose internal details of your system.</p></div>
+
+      </div>
+      <div class="post-foot">
+        <div class="post-tags"><span>Tags</span><a class="tag-pill" href="../../blog/?tag=Laravel">#Laravel</a><a class="tag-pill" href="../../blog/?tag=PHP">#PHP</a><a class="tag-pill" href="../../blog/?tag=API">#API</a><a class="tag-pill" href="../../blog/?tag=MySQL">#MySQL</a></div>
+        <div class="share-row js-share"><span>Share</span></div>
+        <div class="author-box"><img src="../../assets/images/avatar2.png" alt="Alireza Fahimi"><div><small>Written by</small><h4>Alireza Fahimi</h4><p>Software developer focused on backend, Python and AI. I write about what I build and learn.</p><div class="social-row" style="justify-content:flex-start"><a href="https://github.com/fahimi-eng" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a><a href="https://www.linkedin.com/in/fahimieng/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://instagram.com/fahimi-eng" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a></div></div></div>
+        <div class="post-nav" id="postNav"></div>
+        <div class="widget newsletter wide"><div class="nl-copy"><h3>Enjoyed this article?</h3><p>Get new articles about Python, AI and backend development delivered to your inbox.</p></div><form class="js-newsletter" novalidate>
+        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email">
+        <button type="submit">Subscribe</button><small class="js-nl-msg"></small></form></div>
+        <div class="comments-box" id="comments"><h3>Comments</h3></div>
+      </div>
+    </div>
+  </div>
+</article>
+<section class="related"><div class="container"><h2>Related articles</h2><div class="post-grid cols-3" id="relatedPosts"></div></div></section>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div><a href="../../" class="footer-brand">Alireza<span>.</span></a><p>Software Developer · AI Engineer</p></div>
+      <div class="footer-links"><a href="../../#about">About</a><a href="../../#projects">Projects</a><a href="../../blog/">Blog</a><a href="../../#contact">Contact</a><a href="https://github.com/fahimi-eng" target="_blank" rel="noreferrer">GitHub</a><a href="../../blog/feed.xml">RSS</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Alireza Fahimi</span><span>Built with HTML · CSS · Bootstrap · JavaScript</span></div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../../js/script.js"></script>
+<script src="../../js/blog-data.js"></script>
+<script src="../../js/blog.js"></script>
+</body>
+</html>
